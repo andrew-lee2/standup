@@ -44,6 +44,7 @@ const endStandup = (request, response) => {
     console.log('################');
     console.log(request.params);
     console.log(request.params.attendees);
+    
     const num_attendees = parseInt(request.params.attendees);
     const now = new Date();
     const todaysDate = getDateToday(now);
