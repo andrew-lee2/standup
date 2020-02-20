@@ -33,6 +33,7 @@ const startStandup = (request, response) => {
     console.log(`INSERT INTO standup_times (start_date, start_time) VALUES (${todaysDate}, ${timeNow})`);
     pool.query('INSERT INTO standup_times (start_date, start_time) VALUES ($1, $2)', [todaysDate, timeNow], (error, results) => {
         if (error) {
+            console.log(error);
             throw error
         }
         response.status(201).send(`Standup added`)
