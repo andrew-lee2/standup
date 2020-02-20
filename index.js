@@ -1,10 +1,22 @@
 const express = require('express');
 const path = require('path');
+const db = require('./queries');
 
 const app = express();
 
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config()
+}
+
 // Serve static files from the React app
 app.use(express.static(path.join(__dirname, 'client/build')));
+
+// retrieve data from database
+app.get('/standup_times', db.getStandupTimes);
+
+app.post('/start_standup', db.startStandup);
+app.put('/end_standup/:attendees', db.endStandup);
+
 
 // Put all API endpoints under '/api'
 app.get('/api/passwords', (req, res) => {
