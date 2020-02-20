@@ -14,7 +14,6 @@ app.use(express.static(path.join(__dirname, 'client/build')));
 // retrieve data from database
 app.get('/standup_times', db.getStandupTimes);
 
-// TODO comeback to this
 app.post('/start_standup', db.startStandup);
 app.put('/end_standup/:attendees', db.endStandup);
 
