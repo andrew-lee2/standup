@@ -1,0 +1,25 @@
+{
+  "name": "standup",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "heroku-postbuild": "cd client && npm install && npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrew-lee2/standup.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andrew-lee2/standup/issues"
+  },
+  "homepage": "https://github.com/andrew-lee2/standup#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
