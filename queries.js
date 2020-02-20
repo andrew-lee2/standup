@@ -30,10 +30,9 @@ const startStandup = (request, response) => {
     const now = new Date();
     const todaysDate = getDateToday(now);
     const timeNow = getTimeNowUTC(now);
-    console.log(`INSERT INTO standup_times (start_date, start_time) VALUES (${todaysDate}, ${timeNow})`);
+
     pool.query('INSERT INTO standup_times (start_date, start_time) VALUES ($1, $2)', [todaysDate, timeNow], (error, results) => {
         if (error) {
-            console.log(error);
             throw error
         }
         response.status(201).send(`Standup added`)
