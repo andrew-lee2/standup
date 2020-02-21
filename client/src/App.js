@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import logo from './logo.svg';
-import './App.css';
+import './App.scss';
 import StandupNavBar from "./components/StandupNavBar";
+import ChartContainer from "./components/ChartContainer";
 
 function App() {
   const [hasError, setErrors] = useState(false);
@@ -22,6 +23,7 @@ function App() {
   return (
     <div className="App">
       <StandupNavBar/>
+      <ChartContainer/>
     </div>
   );
 }
