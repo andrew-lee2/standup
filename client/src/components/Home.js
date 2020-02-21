@@ -11,7 +11,6 @@ function Home() {
   useEffect(() => {
     fetchData("/standup_times", setStandupData, setErrors);
     fetchData("/standup_avgs", setStandupDataAvg, setErrors);
-    // setHasFetch(true)
   }, []);
 
   return (

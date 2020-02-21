@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 
 import {
   XYPlot,
@@ -7,13 +7,12 @@ import {
   VerticalGridLines,
   HorizontalGridLines,
   VerticalBarSeries,
-  LabelSeries, Crosshair
+  LabelSeries,
 } from 'react-vis';
 
 import { getAvgTime, getAvgAttendees } from "../utils/mungeData";
 
 function StandupAvgBar(props) {
-  const [value, setValue] = useState(false);
   const avgTime = getAvgTime(props.data);
   const avgAttendees = getAvgAttendees(props.data);
 
@@ -36,7 +35,6 @@ function StandupAvgBar(props) {
           <VerticalBarSeries data={avgAttendees}
           />
           <LabelSeries data={labelData} />
-          {value && <Crosshair values={[value]} />}
         </XYPlot>
     </div>
   );
