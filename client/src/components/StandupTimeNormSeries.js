@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { getDataSeries, getTimePoint } from "../utils/mungeData";
+import { getDataSeries, getNormTimePoint } from "../utils/mungeData";
 
 import {
   XYPlot,
@@ -9,17 +9,17 @@ import {
   Crosshair,
 } from 'react-vis';
 
-function StandupTimeSeries(props) {
+function StandupTimeNormSeries(props) {
   const [value, setValue] = useState(false);
-  const totalTimeData = getDataSeries(props.data, getTimePoint);
+  const totalTimeData = getDataSeries(props.data, getNormTimePoint);
 
   return(
     <div>
       <h2>
-        Total Duration Over Time
+        Avg Time Per Person Over Time
       </h2>
       {/*TODO make dynamic*/}
-      <XYPlot height={300} width={500} yDomain={[0, 30]} onMouseLeave={() => setValue(false)}>
+      <XYPlot height={300} width={500} yDomain={[0, 7]} onMouseLeave={() => setValue(false)}>
         <XAxis title="ID"/>
         <YAxis title="Time (min)"/>
         <LineSeries data={totalTimeData} onNearestX={(datapoint)=>{
@@ -31,4 +31,4 @@ function StandupTimeSeries(props) {
   );
 }
 
-export default StandupTimeSeries;
+export default StandupTimeNormSeries;

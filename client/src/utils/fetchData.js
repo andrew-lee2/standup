@@ -1,5 +1,5 @@
-async function fetchData(dataSet, errorSet) {
-  const response = await fetch("/standup_times");
+async function fetchData(route, dataSet, errorSet) {
+  const response = await fetch(route);
   response
     .json()
     .then(response => dataSet(response))
