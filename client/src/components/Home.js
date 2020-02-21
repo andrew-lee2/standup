@@ -5,16 +5,19 @@ import fetchData from "../utils/fetchData";
 
 function Home() {
   const [hasError, setErrors] = useState(false);
-  const [standupData, setStandupData] = useState({});
+  const [standupData, setStandupData] = useState([]);
+  const [standupDataAvg, setStandupDataAvg] = useState([]);
 
   useEffect(() => {
-    fetchData(setStandupData, setErrors);
+    fetchData("/standup_times", setStandupData, setErrors);
+    fetchData("/standup_avgs", setStandupDataAvg, setErrors);
+    // setHasFetch(true)
   }, []);
 
   return (
     <div>
       <StandupNavBar/>
-      <ChartContainer/>
+      <ChartContainer dataFull={standupData} dataAvg={standupDataAvg}/>
     </div>
   );
 }

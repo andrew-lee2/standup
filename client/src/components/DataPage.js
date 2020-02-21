@@ -9,7 +9,7 @@ function DataPage() {
   const [standupData, setStandupData] = useState([]);
 
   useEffect(() => {
-    fetchData(setStandupData, setErrors);
+    fetchData("/standup_times", setStandupData, setErrors);
   }, []);
 
   return (

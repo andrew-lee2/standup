@@ -30,7 +30,6 @@ const columns = [
 ];
 
 function RawDataTable(props) {
-  console.log(props.data);
   return(
     <DataTable
       title="Full Stand-up Data"
