@@ -1,7 +1,6 @@
 import React from 'react';
 import Container from "@material-ui/core/Container";
 import StandupTimeSeries from "./StandupTimeSeries";
-import Example from "./StandupTimeSeries";
 
 
 function ChartContainer() {
