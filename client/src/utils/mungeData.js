@@ -19,7 +19,6 @@ function getAvgAttendees(data) {
 }
 
 function compareIds(a, b) {
-  // Use toUpperCase() to ignore character casing
   const idA = a.x;
   const idB = b.x;
 
