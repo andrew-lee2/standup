@@ -12,22 +12,24 @@ For triggering the endpoints I recommend using [ITFFF](https://ifttt.com/maker_w
 
 # Local Dev
 
-Create `.env` and ddd the following env vars from the SQL database of your choice. 
-TODO add more env vars
+Create `.env` and add the following env vars from the SQL database of your choice. 
+TODO add more env variables:
 
  <ol>
  <li>DB_HOST</li>
- <li>DB_PASS</li>
- <li>DB_USER</li>
+ <li>DB_NAME</li>
+ <li>DB_PORT</li>
+ <li>DB_PASSWORD</li>
+ <li>DB_USERNAME</li>
  </ol>
 
-`npm install` to install express server then `node index.js` to run the server.
+`npm install` to install the API then `node index.js` to run the server.
 
 To run the frontend follow the instructions in `src/README.md`
 
 # Heroku Deployment
 
-See this [Heroku guide](https://devcenter.heroku.com/articles/deploying-nodejs) for deploying
+See this [guide](https://devcenter.heroku.com/articles/deploying-nodejs) for deploying
 to Heroku. You will need to add the above database environmental variables above as well.
 
 

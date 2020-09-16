@@ -3,11 +3,11 @@ const Pool = require('pg').Pool;
 
 
 const pool = new Pool({
-    user: process.env.DB_USER,
+    user: process.env.DB_USERNAME,
     host: process.env.DB_HOST,
-    database: 'standup',
-    password: process.env.DB_PASS,
-    port: 5432,
+    database: process.env.DB_NAME,
+    password: process.env.DB_PASSWORD,
+    port: process.env.DB_PORT,
 });
 
 const getDateToday = (now) => {
